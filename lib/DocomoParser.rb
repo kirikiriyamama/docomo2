@@ -7,7 +7,7 @@ require 'open-uri'
 
 class DocomoParser
   def initialize(uri)
-    @context = Nokogiri::HTML(open uri)
+    @context = Nokogiri::HTML(open(uri))
   end
 
   def parse
@@ -24,6 +24,20 @@ class DocomoParser
       end
     end
 
-    rows
+    @data = rows
+  end
+
+  def save(path)
+    raise if @data.blank?
+
+    content = String.new
+    @data.each do |row|
+      content << row + "\n"
+    end
+    content.chop!
+
+    open(path, 'w') do |f|
+      f.write(content)
+    end
   end
 end
