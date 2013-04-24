@@ -1,7 +1,3 @@
-require 'bundler'
-Bundler.setup
-Bundler.require
-
 require 'open-uri'
 
 
