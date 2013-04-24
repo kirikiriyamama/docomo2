@@ -4,12 +4,20 @@ require File.join(PATH, 'lib', 'diff')
 
 
 describe '#diff' do
+  subject { diff(original, new) }
+    
 	context '差分が存在しない場合' do
-		it { diff(File.join(FIXTURES, 'diff', 'data1'), File.join(FIXTURES, 'diff', 'data2')).should be_nil }
+    let(:original) { File.join(FIXTURES, 'diff', 'data1') }
+    let(:new) { File.join(FIXTURES, 'diff', 'data2') }
+
+		it { should be_nil }
 	end
 
 	context '差分が存在する場合' do
-		it { diff(File.join(FIXTURES, 'diff', 'data1'), File.join(FIXTURES, 'diff', 'data3')).sub(/(.|\n)*(?=^@)/, '').should == EXPECT }
+    let(:original) { File.join(FIXTURES, 'diff', 'data1') }
+    let(:new) { File.join(FIXTURES, 'diff', 'data3') }
+
+		it { should == EXPECT }
 	end
 end
 
