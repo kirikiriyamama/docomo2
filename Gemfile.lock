@@ -1,6 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    activesupport (3.2.12)
+      i18n (~> 0.6)
+      multi_json (~> 1.0)
     addressable (2.3.4)
     coderay (1.0.9)
     crack (0.3.2)
@@ -28,6 +31,7 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.1)
     mime-types (1.23)
+    multi_json (1.7.2)
     nokogiri (1.5.9)
     polyglot (0.3.3)
     pry (0.9.12.1)
@@ -61,6 +65,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
   guard-rspec
   mail
   nokogiri

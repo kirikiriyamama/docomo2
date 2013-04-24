@@ -3,3 +3,4 @@
 vendor
 Guardfile
 tmp
+config/email_delivery.yml

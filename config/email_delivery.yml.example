@@ -1,0 +1,12 @@
+production:
+  smtp_settings:
+    address: smtp.example.com
+    port: 25
+    domain: example.com
+    authentication: :plain
+    user_name: ""
+    password: ""
+  from: from@example.com
+  to:
+    - to_1@example.com
+    - to_2@example.com
