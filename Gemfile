@@ -6,6 +6,8 @@ gem 'nokogiri'
 gem 'systemu'
 gem 'mail'
 
-gem 'rspec'
-gem 'webmock', require: 'webmock/rspec'
-gem 'guard-rspec'
+group :test do
+  gem 'rspec'
+  gem 'webmock', require: 'webmock/rspec'
+  gem 'guard-rspec'
+end
