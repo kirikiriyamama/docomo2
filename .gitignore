@@ -2,5 +2,5 @@
 .bundle
 vendor
 Guardfile
-tmp
+tmp/rspec_guard_result
 config/email_delivery.yml

@@ -55,8 +55,8 @@ describe DocomoParser do
 
 
   describe '#save' do
-    before(:all) do
-      @save_path = File.join(PATH, 'data')
+    before :all do
+      @save_path = File.join(PATH, 'tmp', 'data')
     end
 
     describe '正常系' do
