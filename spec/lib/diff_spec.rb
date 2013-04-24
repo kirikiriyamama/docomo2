@@ -9,11 +9,15 @@ describe '#diff' do
 	end
 
 	context '差分が存在する場合' do
-		f = Tempfile.open('diff', PATH)
-		f.write(diff(File.join(FIXTURES, 'diff', 'data1'), File.join(FIXTURES, 'diff', 'data3')).sub(/(.|\n)*(?=^@)/, ''))
-
-		it { FileUtils.cmp(f.path, File.join(FIXTURES, 'diff', 'diff_data1_data3')).should be_true }
-
-		f.close
+		it { diff(File.join(FIXTURES, 'diff', 'data1'), File.join(FIXTURES, 'diff', 'data3')).sub(/(.|\n)*(?=^@)/, '').should == EXPECT }
 	end
 end
+
+
+EXPECT = <<-EOF
+@@ -1,2 +1,4 @@
++j k l
++g h i
+ d e f
+ a b c
+EOF
