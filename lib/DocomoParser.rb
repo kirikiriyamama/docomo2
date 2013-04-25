@@ -32,7 +32,6 @@ class DocomoParser
     @data.each do |row|
       content << row + "\n"
     end
-    content.chop!
 
     open(path, 'w') do |f|
       f.write(content)
