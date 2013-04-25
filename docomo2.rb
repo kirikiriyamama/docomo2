@@ -1,5 +1,4 @@
 require 'bundler'
-Bundler.setup
 Bundler.require
 
 require File.join(__dir__, 'lib', 'DocomoParser')

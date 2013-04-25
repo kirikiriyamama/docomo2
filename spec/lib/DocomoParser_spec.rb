@@ -31,19 +31,19 @@ describe DocomoParser do
     subject { DocomoParser.new(uri).parse }
 
     context '<table>が存在するURIを入力したとき' do
-      context '[a, b, c][d, e, f] の場合' do
+      context '[a, b, c][d, e, f][g, h, i] の場合' do
         let(:uri) { @table1 }
-        it { should == ['a b c', 'd e f'] }
+        it { should == ['d e f', 'g h i'] }
       end
 
-  	  context '[a, b], [d, e] の場合' do
+  	  context '[a, b][c, d], [e, f][g, h] の場合' do
 				let(:uri) { @table2 }
-        it { should == ['a b'] }
+        it { should == ['c d'] }
       end
 
       context '<td>内に<a>が入れ子になっている場合' do
         let(:uri) { @table3 }
-        it { should == ['a'] }
+        it { should == ['b'] }
       end
     end
 
@@ -70,12 +70,12 @@ describe DocomoParser do
         File.delete(@save_path)
       end
 
-      context '["a b c", "d e f"] を保存する場合' do
+      context '["d e f", "g h i"] を保存する場合' do
         let(:uri) { @table1 }
         it { FileUtils.cmp(@save_path, File.join(FIXTURES, 'DocomoParser', 'table1_parsed')).should be_true }
       end
 
-      context '["a b"] を保存する場合' do
+      context '["c d"] を保存する場合' do
         let(:uri) { @table2 }
         it { FileUtils.cmp(@save_path, File.join(FIXTURES, 'DocomoParser', 'table2_parsed')).should be_true }
       end
