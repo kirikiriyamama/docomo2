@@ -36,8 +36,8 @@ describe DocomoParser do
         it { should == ['d e f', 'g h i'] }
       end
 
-  	  context '[a, b][c, d], [e, f][g, h] の場合' do
-				let(:uri) { @table2 }
+      context '[a, b][c, d], [e, f][g, h] の場合' do
+        let(:uri) { @table2 }
         it { should == ['c d'] }
       end
 

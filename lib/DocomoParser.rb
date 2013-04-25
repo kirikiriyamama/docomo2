@@ -19,7 +19,7 @@ class DocomoParser
         rows << data.chop
       end
 
-			rows.shift
+      rows.shift
     end
 
     @data = rows
