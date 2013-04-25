@@ -32,4 +32,4 @@ if body.nil?
 end
 
 FileUtils.mv(TEMP_DATA_PATH, DATA_PATH)
-p send_mail(File.join(__dir__, 'config', 'email_delivery.yml'), subject, body).body
+send_mail(File.join(__dir__, 'config', 'email_delivery.yml'), subject, body)
